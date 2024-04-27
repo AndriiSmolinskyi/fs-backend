@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "./index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "methods": ["OPTIONS", "GET", "POST", "PUT", "DELETE"], 
+        "headers": {
+          "Access-Control-Allow-Origin": "https://fs-front-peach.vercel.app",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+          "Access-Control-Allow-Headers": "Content-Type"
+        },
+        "dest": "/"
+      }
+    ]
+  }
